@@ -57,9 +57,9 @@ namespace Service
         /// </summary>
         /// <param name="id">Id do tipo de restaurante</param>
         /// <returns>Retorna o tipo de restaurante encontrado ou null</returns>
-        public Tiporestaurante? Get(uint id)
+        public Tiporestaurante Get(uint id)
         {
-            return context.Tiporestaurantes.FirstOrDefault(t => t.Id == id);
+            return context.Tiporestaurantes.FirstOrDefault(t => t.Id == id)!;
         }
 
         /// <summary>
