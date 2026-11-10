@@ -18,6 +18,7 @@ namespace RestauranteWeb
                 options.UseMySQL(builder.Configuration.GetConnectionString("RestauranteConnection") ?? throw new InvalidOperationException("Conexão com o banco de dados não foi possível. Favor entrar em contato com o Administrador.")));
 
             builder.Services.AddTransient<ITipoRestauranteService, TipoRestauranteService>();
+            builder.Services.AddTransient<IFormaPagamentoService, FormaPagamentoService>();
 
             var app = builder.Build();
 
