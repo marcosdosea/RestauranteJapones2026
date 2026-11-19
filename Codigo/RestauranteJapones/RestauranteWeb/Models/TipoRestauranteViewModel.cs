@@ -10,6 +10,6 @@ namespace RestauranteWeb.Models
 
         [Required(ErrorMessage = "Campo requerido")]
         [StringLength(45, MinimumLength = 3, ErrorMessage = "O nome do tipo de restaurante deve ter entre 3 e 45 caracteres")]
-        public string Nome { get; set; }
+        public string Nome { get; set; } = null!;
     }
 }

@@ -1,0 +1,17 @@
+@model RestauranteWeb.Models.RestauranteViewModel
+@{
+    ViewData["Title"] = "Excluir restaurante";
+}
+<h1>Excluir restaurante</h1>
+<p>Confirma a exclusão de <strong>@Model.Nome</strong>?</p>
+<hr />
+<section aria-labelledby="resumo-restaurante">
+    <h2 id="resumo-restaurante" class="visually-hidden">Resumo do restaurante</h2>
+    <dl class="row"><dt class="col-sm-3">CNPJ</dt><dd class="col-sm-9">@Model.Cnpj</dd><dt class="col-sm-3">Tipo</dt><dd class="col-sm-9">@Model.NomeTipoRestaurante</dd></dl>
+</section>
+<form asp-action="Delete">
+    <p asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></p>
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
