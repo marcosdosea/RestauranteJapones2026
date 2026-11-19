@@ -1,9 +1,9 @@
 @model IEnumerable<RestauranteWeb.Models.RestauranteViewModel>
 @{
-    ViewData["Title"] = "Restaurantes";
+    ViewData["Title"] = "Index";
 }
 
-<h1>Restaurantes</h1>
+<h1>Index</h1>
 @if (TempData["SuccessMessage"] is string successMessage)
 {
     <p class="alert alert-success" role="status">@successMessage</p>
@@ -12,10 +12,10 @@
 {
     <p class="alert alert-danger" role="alert">@errorMessage</p>
 }
-<p><a asp-action="Create" class="btn btn-primary">Novo restaurante</a></p>
+<p><a asp-action="Create">Create New</a></p>
 <table class="table">
     <caption class="visually-hidden">Restaurantes cadastrados</caption>
-    <thead><tr><th scope="col">Nome</th><th scope="col">CNPJ</th><th scope="col">Tipo</th><th scope="col">Ações</th></tr></thead>
+    <thead><tr><th scope="col">Nome</th><th scope="col">CNPJ</th><th scope="col">Tipo</th><th scope="col"></th></tr></thead>
     <tbody>
     @foreach (var item in Model)
     {
@@ -24,9 +24,9 @@
             <td>@item.Cnpj</td>
             <td>@item.NomeTipoRestaurante</td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
     }
