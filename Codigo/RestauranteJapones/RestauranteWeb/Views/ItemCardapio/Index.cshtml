@@ -1,0 +1,47 @@
+@model IEnumerable<RestauranteWeb.Models.ItemCardapioViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+@if (TempData["SuccessMessage"] is string successMessage)
+{
+    <p class="alert alert-success" role="status">@successMessage</p>
+}
+@if (TempData["ErrorMessage"] is string errorMessage)
+{
+    <p class="alert alert-danger" role="alert">@errorMessage</p>
+}
+<p><a asp-action="Create">Create New</a></p>
+<table class="table">
+    <caption class="visually-hidden">Itens do cardápio cadastrados</caption>
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Grupo</th>
+            <th scope="col">Restaurante</th>
+            <th scope="col">Ativo</th>
+            <th scope="col">Disponível</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Nome</td>
+            <td>@item.Preco?.ToString("N2")</td>
+            <td>@item.NomeGrupoCardapio</td>
+            <td>@item.NomeRestaurante</td>
+            <td>@item.AtivoTexto</td>
+            <td>@item.DisponivelTexto</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

@@ -1,0 +1,17 @@
+@model RestauranteWeb.Models.ItemCardapioViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+<h1>Edit</h1>
+<hr />
+<section class="row col-md-8" aria-labelledby="titulo-edicao-item-cardapio">
+<h2 id="titulo-edicao-item-cardapio" class="visually-hidden">Dados do item do cardápio</h2>
+<form asp-action="Edit">
+    <p asp-validation-summary="ModelOnly" class="text-danger"></p>
+    <input type="hidden" asp-for="Id" />
+    <partial name="_Form" model="Model" />
+    <input type="submit" value="Save" class="btn btn-primary" />
+    <a asp-action="Index">Back to List</a>
+</form>
+</section>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

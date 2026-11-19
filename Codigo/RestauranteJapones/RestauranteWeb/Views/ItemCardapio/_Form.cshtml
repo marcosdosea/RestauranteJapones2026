@@ -1,0 +1,25 @@
+@model RestauranteWeb.Models.ItemCardapioViewModel
+<fieldset class="row">
+    <legend class="visually-hidden">Dados do item do cardápio</legend>
+    <p class="col-md-8 form-group mb-3"><label asp-for="Nome" class="control-label"></label><input asp-for="Nome" class="form-control" /><span asp-validation-for="Nome" class="text-danger"></span></p>
+    <p class="col-md-4 form-group mb-3"><label asp-for="Preco" class="control-label"></label><input asp-for="Preco" class="form-control" /><span asp-validation-for="Preco" class="text-danger"></span></p>
+    <p class="col-md-6 form-group mb-3"><label asp-for="IdRestaurante" class="control-label"></label><select asp-for="IdRestaurante" asp-items="ViewBag.IdRestaurante" class="form-select"><option value="">Selecione</option></select><span asp-validation-for="IdRestaurante" class="text-danger"></span></p>
+    <p class="col-md-6 form-group mb-3"><label asp-for="IdGrupoCardapio" class="control-label"></label><select asp-for="IdGrupoCardapio" asp-items="ViewBag.IdGrupoCardapio" class="form-select"><option value="">Selecione</option></select><span asp-validation-for="IdGrupoCardapio" class="text-danger"></span></p>
+    <p class="col-md-12 form-group mb-3"><label asp-for="Detalhes" class="control-label"></label><textarea asp-for="Detalhes" class="form-control"></textarea><span asp-validation-for="Detalhes" class="text-danger"></span></p>
+    <p class="col-md-6 form-group mb-3">
+        <label asp-for="Ativo" class="control-label"></label>
+        <select asp-for="Ativo" class="form-select">
+            <option value="1">Sim</option>
+            <option value="0">Não</option>
+        </select>
+        <span asp-validation-for="Ativo" class="text-danger"></span>
+    </p>
+    <p class="col-md-6 form-group mb-3">
+        <label asp-for="Disponivel" class="control-label"></label>
+        <select asp-for="Disponivel" class="form-select">
+            <option value="1">Sim</option>
+            <option value="0">Não</option>
+        </select>
+        <span asp-validation-for="Disponivel" class="text-danger"></span>
+    </p>
+</fieldset>
