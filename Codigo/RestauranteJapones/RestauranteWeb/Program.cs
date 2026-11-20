@@ -23,6 +23,7 @@ namespace RestauranteWeb
             builder.Services.AddTransient<IGrupoCardapioService, GrupoCardapioService>();
             builder.Services.AddTransient<IItemCardapioService, ItemCardapioService>();
             builder.Services.AddTransient<ITipoFuncionario, TipoFuncionarioService>();
+            builder.Services.AddTransient<IFuncionarioService, FuncionarioService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
